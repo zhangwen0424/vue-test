@@ -14,6 +14,14 @@
       </li-->
       <li>
         <a
+          href="https://github.com/zhangwen0424/Apis"
+          target="_blank"
+        >
+        我的学习文档
+        </a>
+      </li>
+      <li>
+        <a
           href="https://github.com/zhangwen0424/"
           target="_blank"
         >
@@ -65,7 +73,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: "欢迎查看我的vue项目！",
+      msg: '欢迎查看我的vue项目！',
       projects: [{
         name: '小测试', href: '/'
       }]
