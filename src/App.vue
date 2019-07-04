@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/profile.png">
+    <img src="./assets/profile.png" title="home page" @click="homePage">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    homePage: function () {
+      window.location.href = '/'
+    }
+  }
 }
 </script>
 
@@ -23,5 +28,6 @@ export default {
 img {
   width: 200px;
   height: 200px;
+  cursor: pointer;
 }
 </style>

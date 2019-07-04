@@ -2,67 +2,39 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <h2>项目链接</h2>
+    <h2>Job Link</h2>
     <ul>
-      <!--li v-for="(project, key) in projects" v-bind="{{key}}">
+      <li v-for="(project, key) in projects" v-bind:key="{key}">
         <router-link
-          to="https://vuejs.org"
-          target="_blank"
+          :to="project.href"
         >
         {{project.name}}
         </router-link>
-      </li-->
+      </li>
       <li>
         <a
           href="https://github.com/zhangwen0424/Apis"
           target="_blank"
+          title="my study api"
         >
-        我的学习文档
+        api
         </a>
       </li>
       <li>
         <a
           href="https://github.com/zhangwen0424/"
           target="_blank"
+          title="more about me"
         >
-        更多关于我
+        more
         </a>
       </li>
     </ul>
 
-    <h2>知识链接</h2>
+    <h2>Apis Link</h2>
     <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
+      <li v-for="(api,key) in apis" :key="key">
+        <a href="api.href" target="_blank">{{api.name}}</a>
       </li>
     </ul>
   </div>
@@ -73,9 +45,18 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '欢迎查看我的vue项目！',
+      msg: 'Welcome to see my vue project！',
       projects: [{
-        name: '小测试', href: '/'
+        name: 'change color', href: '/ChangeColor'
+      }],
+      apis: [{
+        name: 'vue-router', href: 'http://router.vuejs.org/'
+      }, {
+        name: 'vuex', href: 'http://vuex.vuejs.org/'
+      }, {
+        name: 'vue-loader', href: 'http://vue-loader.vuejs.org/'
+      }, {
+        name: 'awesome-vue', href: 'https://github.com/vuejs/awesome-vue'
       }]
     }
   }

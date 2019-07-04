@@ -22,6 +22,10 @@ http://localhost:8080
 #### 安装vue-route
 cnpm install vue-router
 
+#### Chrome安装vue-devtools
+[vue-devtools] [https://github.com/zhangwen0424/vue-test/blob/master/vue-devtools.crx]
+下载文件拖到Chrome开发者工具中
+
 #### vscode中安装插件
 Vetur  格式化代码、高亮、代码格式检测、自带Emment、括号自动补全  
 ivue   语法提示高亮
