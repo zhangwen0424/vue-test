@@ -5,9 +5,7 @@
     <h2>Job Link</h2>
     <ul>
       <li v-for="(project, key) in projects" v-bind:key="{key}">
-        <router-link
-          :to="project.href"
-        >
+        <router-link :to="project.href" >
         {{project.name}}
         </router-link>
       </li>
@@ -48,6 +46,8 @@ export default {
       msg: 'Welcome to see my vue project！',
       projects: [{
         name: 'change color', href: '/ChangeColor'
+      }, {
+        name: 'change page', href: '/Changepage'
       }],
       apis: [{
         name: 'vue-router', href: 'http://router.vuejs.org/'

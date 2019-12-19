@@ -14,6 +14,7 @@ vue init webpack zw-vue-project
 
 #### 4.进入项目中启动项目
 cd zw-vue-project  
+cnpm install
 cnpm run dev
 
 #### 5.浏览器中查看创建的项目

@@ -22,17 +22,8 @@
 
   <p>
     Type3:
-    <input @change="changeInputColor">
+    <input v-model="color" placeholder="输入颜色,例如：blue">
   </p>
-  <!-- <p>
-    select to change:
-    <select v-model="selected" @change="selectChangeColor">
-      <option value="">选择一个颜色</option>
-      <option v-for="(color, key) in colors" :value="color">{{color}}</option>
-    </select>
-  </p> -->
-
-  <!-- <input type="number" max="10"> -->
 </div>
 </template>
 <script>
@@ -40,7 +31,7 @@ export default{
   name: 'ChangeColor',
   data () {
     return {
-      msg: 'change color to click',
+      msg: 'click to change color',
       content: 'I like study vue!',
       colors: ['red', 'green', 'blue', 'yellow', 'black'],
       color: 'red',
@@ -63,7 +54,7 @@ export default{
     },
     changeInputColor: function (event) {
       // console.log('event',event)
-      this.color = ''
+      this.color = this.color
     }
   }
 }
