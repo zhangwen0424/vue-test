@@ -21,26 +21,30 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'
+  entry: {/* 入口 */
+    app: './src/main.js'/* 可设置多入口 */
   },
-  output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js',
+  output: {/* 输出 */
+    path: config.build.assetsRoot, /* 输出到指定路径 */
+    filename: '[name].js', /* 输出文件名 */
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
+  resolve: { /* 配置如何寻找模块对应文件 */
+    extensions: ['.js', '.vue', '.json', '.vue', '.ts'], /* 导入语句中未带入后缀会默认带上这些进行查找 */
+    alias: { /* 别名，通过别名将导入路径映射为新的路径 */
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
-  module: {
+  module: {/* 对模块源代码转换 */
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
+      // {
+      //   test: /\.(scss|css)$/,
+      //   loader: [ 'style-loader', 'css-loader', 'sass-loader' ]
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

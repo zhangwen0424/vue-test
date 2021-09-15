@@ -5,16 +5,22 @@ import ElementUI from 'element-ui'
 import HelloWorld from '@/components/HelloWorld'
 import ChangeColor from '@/components/ChangeColor'
 import ChangePage from '@/components/ChangePage'
+// import Nav from '@/components/homepage/Nav'
 
 Vue.use(Router)
 Vue.use(ElementUI)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/ChangeColor',
+      name: 'ChangeColor',
+      component: ChangeColor
     },
     {
       path: '/ChangeColor',
@@ -28,3 +34,5 @@ export default new Router({
     }
   ]
 })
+
+export default router
